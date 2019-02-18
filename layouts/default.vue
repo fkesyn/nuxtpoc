@@ -104,6 +104,11 @@ export default {
           icon: 'bubble_chart',
           title: 'Inspire',
           to: '/inspire'
+        },
+        {
+          icon: 'hotel',
+          title: 'RateTracker',
+          to: '/rateTracker'
         }
       ],
       miniVariant: false,
