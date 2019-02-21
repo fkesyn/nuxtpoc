@@ -8,14 +8,13 @@
       </v-layout>
       <v-layout row>
         <v-flex xs12 lg12>
-          <room-filters></room-filters>
+          <room-filters />
         </v-flex>
       </v-layout>
     </v-container>
   </div>
 </template>
 <script>
-import { services } from '../config/services'
 import RoomSelector from '../components/RoomSelector'
 import RoomFilters from '../components/RoomFilters'
 
@@ -27,15 +26,11 @@ export default {
   },
   methods: {
     getFilters() {
-      const url = services.GEOPRICING + '/7078/filters'
+      const url = 'api/rooms'
       this.$axios
-        .get(url, {
-          headers: {
-            Accept: 'application/json',
-            'Accept-Language': 'en'
-          }
-        })
+        .get(url)
         .then(response => {
+          debugger
           this.$store.commit('ratetracker/updateRooms', response.data)
         })
         .catch(error => {

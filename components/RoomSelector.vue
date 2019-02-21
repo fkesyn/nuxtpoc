@@ -1,11 +1,11 @@
 <template>
   <div id="room-selector">
     <v-select
+      v-model="selectedRoom"
       :items="rooms"
       item-text="name"
       item-value="id"
       label="Select your room"
-      v-model="selectedRoom"
       @change="updateSelectedRoom"
     />
   </div>
