@@ -3,6 +3,7 @@
     <v-container grid-list>
       <v-layout row>
         <v-flex xs12 sm6 md6 lg4>
+            Teste
           <room-selector />
         </v-flex>
       </v-layout>
@@ -30,12 +31,10 @@ export default {
       this.$axios
         .get(url)
         .then(response => {
-          debugger
           this.$store.commit('ratetracker/updateRooms', response.data)
         })
         .catch(error => {
-          // console.log(error)
-          alert(error)
+          console.log(error)
         })
     }
   }

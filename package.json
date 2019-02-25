@@ -5,7 +5,7 @@
   "author": "fabio.mota",
   "private": true,
   "scripts": {
-    "dev": "cross-env nuxt",
+    "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
@@ -16,6 +16,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^2.6.0",
+    "cors": "^2.8.5",
     "nuxt": "^2.4.0",
     "nuxt-express-module": "0.0.11",
     "vuetify": "^1.5.0",

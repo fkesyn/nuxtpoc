@@ -1,7 +1,10 @@
-const { Router } = require('express')
-const router = Router()
+var express = require('express')
+var cors = require('cors')
+var app = express()
 
-router.get('/api/rooms', (req, res) => {
+app.use(cors())
+
+app.get('/api/rooms', (req, res) => {
   const rooms = {
     rooms: [
       {
@@ -27,4 +30,4 @@ router.get('/api/rooms', (req, res) => {
   res.send(rooms)
 })
 
-module.exports = router
+module.exports = app
