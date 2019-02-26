@@ -1,7 +1,7 @@
 <template>
   <div id="room-selector">
     <v-select
-      v-model="selectedRoom"
+      :value="selectedRoom"
       :items="rooms"
       item-text="name"
       item-value="id"
