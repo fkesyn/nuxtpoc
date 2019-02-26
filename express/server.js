@@ -1,40 +1,20 @@
+'use strict'
 const express = require('express')
 const serverless = require('serverless-http')
-const cors = require('cors')
 const app = express()
-
-app.use(cors())
+const bodyParser = require('body-parser')
 
 const router = express.Router()
-
-router.get('/api/rooms', (req, res) => {
-  const rooms = {
-    rooms: [
-      {
-        beds: 1,
-        id: 1,
-        name: 'Basic 1 Bed Male Dorm',
-        type: 'dorm'
-      },
-      {
-        beds: 3,
-        id: 2,
-        name: 'Basic 3 Bed Male Dorm',
-        type: 'dorm'
-      },
-      {
-        beds: 2,
-        id: 3,
-        name: 'Private room',
-        type: 'private'
-      }
-    ]
-  }
-  res.send(rooms)
+router.get('/', (req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/html' })
+  res.write('<h1>Hello from Express.js!</h1>')
+  res.end()
 })
+router.get('/another', (req, res) => res.json({ route: req.originalUrl }))
+router.post('/', (req, res) => res.json({ postBody: req.body }))
 
+app.use(bodyParser.json())
 app.use('/.netlify/functions/server', router) // path must route to lambda
-// app.use('/', router)
 
 module.exports = app
 module.exports.handler = serverless(app)
