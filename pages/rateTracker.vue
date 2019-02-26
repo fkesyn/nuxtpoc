@@ -3,7 +3,7 @@
     <v-container grid-list>
       <v-layout row>
         <v-flex xs12 sm6 md6 lg4>
-            Teste
+          oi
           <room-selector />
         </v-flex>
       </v-layout>

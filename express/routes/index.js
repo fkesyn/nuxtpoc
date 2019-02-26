@@ -1,8 +1,10 @@
-var express = require('express')
-var cors = require('cors')
-var app = express()
+const express = require('express')
+const serverless = require('serverless-http')
+const cors = require('cors')
+const app = express()
 
 app.use(cors())
+app.use('/.netlify/functions/server') // path must route to lambda
 
 app.get('/api/rooms', (req, res) => {
   const rooms = {
@@ -31,3 +33,4 @@ app.get('/api/rooms', (req, res) => {
 })
 
 module.exports = app
+module.exports.handler = serverless(app)
