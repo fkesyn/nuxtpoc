@@ -45,8 +45,7 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa',
-    'nuxt-express-module'
+    '@nuxtjs/pwa'
   ],
   /*
   ** Axios module configuration

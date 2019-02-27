@@ -1,3 +1,0 @@
-[build]
-  command = "npm run generate && netlify-lambda build lambda_functions"
-  functions = "dist/lambda_functions"

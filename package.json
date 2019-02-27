@@ -16,13 +16,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^2.6.0",
-    "body-parser": "^1.18.3",
-    "cors": "^2.8.5",
-    "netlify-lambda": "^1.4.2",
     "nuxt": "^2.4.0",
-    "nuxt-express-module": "0.0.11",
-    "serverless": "^1.38.0",
-    "serverless-http": "^1.9.1",
     "vuetify": "^1.5.0",
     "vuetify-loader": "^1.2.0"
   },
