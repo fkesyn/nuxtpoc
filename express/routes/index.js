@@ -39,7 +39,7 @@ router.get('/cenas', (req, res) => {
   res.end()
 })
 
-app.use('/.netlify/functions/hello', router) // path must route to lambda
+app.use('/.netlify/functions/server', router) // path must route to lambda
 // app.use('/', router)
 
 module.exports = app
