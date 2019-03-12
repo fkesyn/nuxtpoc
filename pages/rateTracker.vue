@@ -1,12 +1,21 @@
 <template>
   <div id="rate-tracker">
-    <v-progress-circular
-      v-if="isLoading"
-      :size="100"
-      color="amber"
-      indeterminate
-    />
-    <v-container v-else grid-list>
+    <v-alert
+      v-if="noData"
+      :value="true"
+      type="error"
+    >
+      No data loaded
+    </v-alert>
+    <div v-if="isLoading" class="text-xs-center">
+      <v-progress-circular
+
+        :size="100"
+        color="amber"
+        indeterminate
+      />
+    </div>
+    <v-container v-else-if="!noData" grid-list>
       <v-layout row>
         <v-flex xs12 sm6 md6 lg4>
           <room-selector />
@@ -21,6 +30,8 @@
   </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
+import { services } from '../server'
 import RoomSelector from '../components/RoomSelector'
 import RoomFilters from '../components/RoomFilters'
 
@@ -29,24 +40,35 @@ export default {
   components: { RoomFilters, RoomSelector },
   data() {
     return {
+      noData: false,
       isLoading: true
     }
+  },
+  computed: {
+    ...mapGetters({
+      rooms: 'ratetracker/rooms'
+    })
   },
   mounted() {
     this.getFilters()
   },
   methods: {
     getFilters() {
-      const url = 'https://mock-serve-sample.herokuapp.com/api/rooms'
-      debugger
       this.$axios
-        .get(url)
+        .get(services.ROOMS)
         .then(response => {
-          this.isLoading = false
           this.$store.commit('ratetracker/updateRooms', response.data)
         })
         .catch(error => {
+          if (this.rooms.length === 0) {
+            this.noData = true
+          }
           console.log(error)
+        })
+        .finally(() => {
+          setTimeout(() => {
+            this.isLoading = false
+          }, 1000)
         })
     }
   }
