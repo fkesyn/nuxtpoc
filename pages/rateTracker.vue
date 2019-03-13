@@ -15,17 +15,16 @@
         indeterminate
       />
     </div>
-    <v-container v-else-if="!noData" grid-list>
-      <v-layout row>
-        <v-flex xs12 sm6 md6 lg4>
+    <v-container v-else-if="!noData" grid-list-xs>
+      <v-layout row wrap>
+        <v-flex lg3 xs12>
           <room-selector />
         </v-flex>
       </v-layout>
-      <v-layout row>
-        <v-flex xs12 lg12>
-          <room-filters />
-        </v-flex>
-      </v-layout>
+      <room-filters />
+      <v-btn color="warning" dark large>
+        Search Competitors
+      </v-btn>
     </v-container>
   </div>
 </template>
