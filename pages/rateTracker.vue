@@ -25,6 +25,7 @@
       <v-btn color="warning" dark large>
         Search Competitors
       </v-btn>
+      <list-competitors />
     </v-container>
   </div>
 </template>
@@ -33,10 +34,11 @@ import { mapGetters } from 'vuex'
 import { services } from '../server'
 import RoomSelector from '../components/RoomSelector'
 import RoomFilters from '../components/RoomFilters'
+import ListCompetitors from '../components/ListCompetitors'
 
 export default {
   name: 'RateTrackerContainer',
-  components: { RoomFilters, RoomSelector },
+  components: { RoomFilters, RoomSelector, ListCompetitors },
   data() {
     return {
       noData: false,
