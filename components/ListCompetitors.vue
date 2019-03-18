@@ -8,10 +8,6 @@
           label="Search"
           hide-details
         />
-      </v-flex>
-    </v-layout>
-    <v-layout row wrap>
-      <v-flex xs12 lg5>
         <v-data-table
           :search="search"
           :headers="headers"
@@ -36,6 +32,9 @@
         </v-data-table>
       </v-flex>
       <v-flex xs12 offset-lg1 lg5>
+        <div class="dt-title">
+          Your Selected Competitors
+        </div>
         <v-data-table
           :headers="headers"
           :items="selected"
@@ -142,5 +141,9 @@ export default {
 <style>
 .clickable {
   cursor: pointer;
+}
+.dt-title {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 </style>

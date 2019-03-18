@@ -7,7 +7,7 @@
     >
       No data loaded
     </v-alert>
-    <div v-if="isLoading" class="text-xs-center">
+    <div v-if="isLoadingRooms" class="text-xs-center">
       <v-progress-circular
 
         :size="100"
@@ -22,10 +22,18 @@
         </v-flex>
       </v-layout>
       <room-filters />
-      <v-btn color="warning" dark large>
+      <v-btn color="warning" dark large @click="searchCompetitors">
         Search Competitors
       </v-btn>
-      <list-competitors />
+      <div v-if="isLoadingCompetitors" class="text-xs-center">
+        <v-progress-circular
+
+          :size="100"
+          color="amber"
+          indeterminate
+        />
+      </div>
+      <list-competitors v-if="hasCompetitors && !isLoadingCompetitors" />
     </v-container>
   </div>
 </template>
@@ -42,7 +50,9 @@ export default {
   data() {
     return {
       noData: false,
-      isLoading: true
+      isLoadingRooms: true,
+      isLoadingCompetitors: false,
+      hasCompetitors: false
     }
   },
   computed: {
@@ -67,10 +77,15 @@ export default {
           console.log(error)
         })
         .finally(() => {
-          setTimeout(() => {
-            this.isLoading = false
-          }, 1000)
+          this.isLoadingRooms = false
         })
+    },
+    searchCompetitors() {
+      this.isLoadingCompetitors = true
+      setTimeout(() => {
+        this.hasCompetitors = true
+        this.isLoadingCompetitors = false
+      }, 1000)
     }
   }
 }
