@@ -107,14 +107,14 @@ export default {
         },
         {
           icon: 'hotel',
-          title: 'RateTracker',
+          title: 'Rate Tracker',
           to: '/rateTracker'
         }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Nuxt POC'
     }
   }
 }

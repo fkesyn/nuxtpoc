@@ -43,7 +43,7 @@ export default {
       return this.selectedRoom.beds
     },
     getRoomType() {
-      return this.selectedRoom.type === 'dorm'
+      return this.selectedRoom.type === 'private'
     },
     getNumberBeds() {
       return Array(services.NUMBER_OF_BEDS)
