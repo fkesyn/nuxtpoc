@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -101,14 +101,14 @@ export default {
           to: '/'
         },
         {
-          icon: 'bubble_chart',
-          title: 'Inspire',
-          to: '/inspire'
-        },
-        {
           icon: 'hotel',
           title: 'Rate Tracker',
           to: '/rateTracker'
+        },
+        {
+          icon: 'bubble_chart',
+          title: 'Calendar View',
+          to: '/calendarView'
         }
       ],
       miniVariant: false,

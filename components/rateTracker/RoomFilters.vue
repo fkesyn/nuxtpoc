@@ -21,8 +21,8 @@
 </template>
 <script>
 import { mapGetters } from 'vuex'
-import { services } from '../server'
-import DatePicker from './sub-components/date-picker'
+import { services } from '../../server'
+import DatePicker from '../sub-components/date-picker'
 
 export default {
   name: 'RoomFilters',

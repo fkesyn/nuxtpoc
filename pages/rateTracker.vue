@@ -40,9 +40,9 @@
 <script>
 import { mapGetters } from 'vuex'
 import { services } from '../server'
-import RoomSelector from '../components/RoomSelector'
-import RoomFilters from '../components/RoomFilters'
-import ListCompetitors from '../components/ListCompetitors'
+import RoomSelector from '../components/rateTracker/RoomSelector'
+import RoomFilters from '../components/rateTracker/RoomFilters'
+import ListCompetitors from '../components/rateTracker/ListCompetitors'
 
 export default {
   name: 'RateTrackerContainer',
