@@ -1,6 +1,6 @@
 <template>
   <v-container id="room-card">
-    <v-card>
+    <v-card class="room-card">
       <v-img
         class="white--text"
         height="200px"
@@ -8,28 +8,57 @@
       />
       <v-card-title>
         <div>
-          <span>{{ title }}</span><br>
+          <span class="room-title">{{ title }}</span><br>
         </div>
       </v-card-title>
-      <v-tabs fixed-tabs>
-        <v-tab>
+      <v-tabs
+        slider-color="#6FBFB4"
+        height="35"
+        left
+        active-class="active-class"
+      >
+        <v-tab class="tabs" href="#weekday">
           Week Day
         </v-tab>
-        <v-tab>
+        <v-tab class="tabs" href="#weekend">
           Weekend
         </v-tab>
+        <v-tabs-items>
+          <v-tab-item
+            value="weekday"
+          >
+
+              <v-card-text>
+                     <v-layout row wrap>
+                         <v-flex lg6>
+                             Standard Rate
+                         </v-flex>
+                         <v-flex lg6>
+                             €20.00
+                         </v-flex>
+                         </v-layout>
+              </v-card-text>
+
+          </v-tab-item>
+          <v-tab-item
+            value="weekend"
+          >
+            <v-card flat>
+              <v-card-text>
+                  <v-layout row wrap>
+                      <v-flex lg6>
+                          Standard Rate
+                      </v-flex>
+                      <v-flex lg6>
+                          €25.00
+                      </v-flex>
+                  </v-layout>
+              </v-card-text>
+            </v-card>
+          </v-tab-item>
+        </v-tabs-items>
       </v-tabs>
-      <div>
-        <span>Teste</span><br>
-      </div>
-      <v-card-actions>
-        <v-btn flat color="orange">
-          Share
-        </v-btn>
-        <v-btn flat color="orange">
-          Explore
-        </v-btn>
-      </v-card-actions>
+      <v-card-text>Teste</v-card-text>
     </v-card>
   </v-container>
 </template>
@@ -77,7 +106,18 @@ export default {
 }
 </script>
 <style>
+.room-card {
+  border-radius: 5px;
+}
+.room-title {
+  font-size: 15px;
+  font-weight: bold;
+}
 .tabs {
-  font-size: 10px;
+  text-transform: none;
+}
+.active-class {
+  font-weight: bold;
+  color: #6fbfb4;
 }
 </style>
