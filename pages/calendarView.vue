@@ -9,7 +9,16 @@
         md6
         lg3
       >
-        <room-card :title="room.name" :type="room.type" />
+        <room-card
+          :title="room.name"
+          :type="room.type"
+          :rate-week="room.rateWeek"
+          :rate-weekend="room.rateWeekend"
+          :nrr-type="room.nrrType"
+          :nrr-weekend="room.nrrWeekend"
+          :nrr-week="room.nrrWeek"
+          :status="room.status"
+        />
       </v-flex>
     </v-layout>
   </v-container>
@@ -36,4 +45,7 @@ export default {
 </script>
 
 <style>
+#calendar-view {
+  font-family: Roboto;
+}
 </style>

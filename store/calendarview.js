@@ -1,10 +1,12 @@
 export const state = () => ({
+  currency: '€',
   rooms: {
     '100': {
       name: 'Male Dorm',
       type: 'dorm',
       rateWeek: 50.0,
-      rateWeekend: 60.0,
+      rateWeekend: 60.5,
+      nrrType: 'derived',
       nrrWeek: 2,
       nrrWeekend: 3,
       status: true
@@ -14,6 +16,7 @@ export const state = () => ({
       type: 'dorm',
       rateWeek: 55.0,
       rateWeekend: 65.0,
+      nrrType: 'derived',
       nrrWeek: 5,
       nrrWeekend: 7,
       status: true
@@ -22,7 +25,8 @@ export const state = () => ({
       name: 'Private Room',
       type: 'private',
       rateWeek: 87.0,
-      rateWeekend: 94.0,
+      rateWeekend: 94.75,
+      nrrType: 'derived',
       nrrWeek: 10,
       nrrWeekend: 13,
       status: true
@@ -32,13 +36,25 @@ export const state = () => ({
       type: 'private',
       rateWeek: 187.0,
       rateWeekend: 194.0,
+      nrrType: 'derived',
       nrrWeek: 10,
       nrrWeekend: 13,
+      status: false
+    },
+    '104': {
+      name: 'Mix Dorm',
+      type: 'dorm',
+      rateWeek: 10.0,
+      rateWeekend: 12.55,
+      nrrType: 'non-derived',
+      nrrWeek: 8.42,
+      nrrWeekend: 11,
       status: false
     }
   }
 })
 
 export const getters = {
-  rooms: state => state.rooms
+  rooms: state => state.rooms,
+  currency: state => state.currency
 }

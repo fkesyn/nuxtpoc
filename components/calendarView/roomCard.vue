@@ -27,44 +27,39 @@
           <v-tab-item
             value="weekday"
           >
-
-              <v-card-text>
-                     <v-layout row wrap>
-                         <v-flex lg6>
-                             Standard Rate
-                         </v-flex>
-                         <v-flex lg6>
-                             €20.00
-                         </v-flex>
-                         </v-layout>
-              </v-card-text>
-
+            <v-card-text>
+              <room-card-rates
+                :status="status"
+                :rate="rateWeek"
+                :nrr="nrrWeek"
+                :nrr-type="nrrType"
+              />
+            </v-card-text>
           </v-tab-item>
           <v-tab-item
             value="weekend"
           >
             <v-card flat>
               <v-card-text>
-                  <v-layout row wrap>
-                      <v-flex lg6>
-                          Standard Rate
-                      </v-flex>
-                      <v-flex lg6>
-                          €25.00
-                      </v-flex>
-                  </v-layout>
+                <room-card-rates
+                  :status="status"
+                  :rate="rateWeekend"
+                  :nrr="nrrWeekend"
+                  :nrr-type="nrrType"
+                />
               </v-card-text>
             </v-card>
           </v-tab-item>
         </v-tabs-items>
       </v-tabs>
-      <v-card-text>Teste</v-card-text>
     </v-card>
   </v-container>
 </template>
 <script>
+import roomCardRates from './roomCardRates'
 export default {
   name: 'RoomCard',
+  components: { roomCardRates },
   props: {
     title: {
       type: String,
@@ -81,6 +76,10 @@ export default {
     rateWeekend: {
       type: Number,
       default: 0
+    },
+    nrrType: {
+      type: String,
+      default: 'derived'
     },
     nrrWeek: {
       type: Number,
