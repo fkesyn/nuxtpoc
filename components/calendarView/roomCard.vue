@@ -1,6 +1,6 @@
 <template>
   <v-container id="room-card">
-    <v-card class="room-card">
+    <v-card id="room-card">
       <v-img
         class="white--text"
         height="200px"
@@ -104,7 +104,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .room-card {
   border-radius: 5px;
 }

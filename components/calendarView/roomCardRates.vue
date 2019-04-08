@@ -2,19 +2,19 @@
   <div id="room-card-rates">
     <v-layout row wrap>
       <v-flex lg10 xs10>
-          <span class="span-gray">Standard Rate</span>
+        <span class="span-gray">Standard Rate</span>
       </v-flex>
       <v-flex lg2 xs2>
         <span class="right span-green">{{ formatToFloat(rate) }}</span>
       </v-flex>
       <v-flex lg10 xs10>
-          <span class="span-gray">Non-refundable</span>
+        <span class="span-gray">Non-refundable</span>
       </v-flex>
       <v-flex lg2 xs2>
         <span class="right span-red">{{ getNRR }}</span>
       </v-flex>
       <v-flex lg10 xs10>
-          <span class="span-gray">NRR Status</span>
+        <span class="span-gray">NRR Status</span>
       </v-flex>
       <v-flex lg2 xs2>
         <span class="right span-green">{{ getStatus }}</span>
@@ -63,7 +63,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 .flex {
   margin-bottom: 5px;
 }

@@ -50,6 +50,36 @@ export const state = () => ({
       nrrWeek: 8.42,
       nrrWeekend: 11,
       status: false
+    },
+    '105': {
+      name: 'Pod in dorm',
+      type: 'private',
+      rateWeek: 27.0,
+      rateWeekend: 34.2,
+      nrrType: 'derived',
+      nrrWeek: 10,
+      nrrWeekend: 12,
+      status: true
+    },
+    '106': {
+      name: 'Female deluxe dorm',
+      type: 'dorm',
+      rateWeek: 24.0,
+      rateWeekend: 28.5,
+      nrrType: 'non-derived',
+      nrrWeek: 20.3,
+      nrrWeekend: 22.2,
+      status: false
+    },
+    '107': {
+      name: 'Private Suite Room',
+      type: 'private',
+      rateWeek: 127.0,
+      rateWeekend: 166.6,
+      nrrType: 'derived',
+      nrrWeek: 13,
+      nrrWeekend: 15,
+      status: true
     }
   }
 })
