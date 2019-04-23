@@ -1,5 +1,6 @@
 <template>
-  <v-container id="calendar-view" class="extended">
+  <div id="calendar-view" class="extended">
+    <v-data-table v-if="show" />
     <span class="title">ROOMS OVERVIEW</span>
 
     <v-layout row wrap>
@@ -40,7 +41,7 @@
         />
       </v-flex>
     </v-layout>
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -52,7 +53,8 @@ export default {
   components: { roomCard },
   data() {
     return {
-      search: ''
+      search: '',
+      show: false
     }
   },
   computed: {
@@ -65,6 +67,7 @@ export default {
       })
     }
   }
+  // middleware: 'auth'
 }
 </script>
 

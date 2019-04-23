@@ -46,7 +46,8 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@ax2/dayjs-module'
+    '@ax2/dayjs-module',
+    'cookie-universal-nuxt'
   ],
   /*
   ** Axios module configuration
@@ -54,18 +55,15 @@ module.exports = {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
-
+  router: {
+    middleware: ['auth']
+  },
   /*
   ** Build configuration
   */
   build: {
+    extractCSS: true,
     transpile: ['vuetify/lib'],
-    plugins: [new VuetifyLoaderPlugin()],
-    loaders: {
-      stylus: {
-        import: ['~assets/style/variables.styl']
-      }
-    },
 
     /*
     ** You can extend webpack config here
@@ -80,6 +78,8 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+
+      config.plugins.push(new VuetifyLoaderPlugin())
     }
   }
 }
