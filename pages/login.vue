@@ -30,7 +30,6 @@ export default {
         this.$cookies.set('jwt', token.detail[0], {
           maxAge: 60 * 60 * 24
         })
-        // this.$store.commit('login/setAuthToken', token.detail[0])
         this.$router.push('/')
       }
     }
