@@ -87,6 +87,7 @@ export default {
         this.isLoadingCompetitors = false
       }, 1000)
     }
-  }
+  },
+  middleware: 'authenticated'
 }
 </script>

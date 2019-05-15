@@ -1,6 +1,9 @@
 <template>
   <v-container id="login">
     <v-data-table v-if="show" />
+    <no-ssr>
+      FDXX!!!!
+    </no-ssr>
     <login-widget :id="id" @loginClick="getLoginToken" />
   </v-container>
 </template>
@@ -24,15 +27,18 @@ export default {
   },
   mounted() {},
   methods: {
-    getLoginToken(token) {
-      const isAuthenticated = !!token.detail[0]
+    getLoginToken(response) {
+      const token = response.detail[0]
+      const isAuthenticated = !!token
       if (isAuthenticated) {
-        this.$cookies.set('jwt', token.detail[0], {
+        this.$cookies.set('jwt', token, {
           maxAge: 60 * 60 * 24
         })
+        this.$store.commit('login/setAuthToken', token)
         this.$router.push('/')
       }
     }
-  }
+  },
+  middleware: 'anonymous'
 }
 </script>

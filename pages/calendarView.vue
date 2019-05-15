@@ -66,8 +66,8 @@ export default {
         return room.name.toLowerCase().includes(this.search.toLowerCase())
       })
     }
-  }
-  // middleware: 'auth'
+  },
+  middleware: 'authenticated'
 }
 </script>
 
