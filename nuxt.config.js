@@ -56,7 +56,30 @@ module.exports = {
     // See https://github.com/nuxt-community/axios-module#options
   },
   router: {
-    // middleware: ['check-auth']
+    extendRoutes(routes, resolve) {
+      routes.push(
+        {
+          name: 'custom',
+          path: '*',
+          component: resolve(__dirname, 'pages/error.vue')
+        },
+        {
+          name: 'index',
+          path: '/',
+          component: resolve(__dirname, 'pages/index.vue')
+        },
+        {
+          name: 'login',
+          path: '/login',
+          component: resolve(__dirname, 'pages/login.vue')
+        },
+        {
+          name: 'calendarView',
+          path: '/calendarView',
+          component: resolve(__dirname, 'pages/calendarView.vue')
+        }
+      )
+    }
   },
   /*
   ** Build configuration
