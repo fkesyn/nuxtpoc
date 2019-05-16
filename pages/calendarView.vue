@@ -1,6 +1,5 @@
 <template>
   <div id="calendar-view" class="extended">
-    <!--<v-data-table v-if="show" />-->
     <no-ssr>
       <span class="title">ROOMS OVERVIEW</span>
 

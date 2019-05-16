@@ -1,5 +1,4 @@
 export default function({ store, req }) {
-  store.commit('login/setCheck', 'entrei no checkAuth')
   // ignore nuxt generate
   // if (process.server && !req) return
   const auth = process.server
