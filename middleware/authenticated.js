@@ -1,5 +1,5 @@
 export default function({ store, redirect }) {
-  if (!store.state.login.authToken && !store.$cookies.get('jwt')) {
-    return redirect('/login/')
+  if (!store.state.login.authToken) {
+    return redirect('/login')
   }
 }

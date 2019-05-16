@@ -1,7 +1,9 @@
-// const cookieparser = process.server ? require('cookieparser') : undefined
-export default function({ store }) {
-  if (process.server) {
-    const auth = store.$cookies.get('jwt')
-    store.commit('login/setAuthToken', auth)
-  }
+export default function({ store, req }) {
+  store.commit('login/setCheck', 'entrei no checkAuth')
+  // ignore nuxt generate
+  // if (process.server && !req) return
+  const auth = process.server
+    ? store.$cookies.get('jwt')
+    : localStorage.getItem('jwt')
+  store.commit('login/setAuthToken', auth)
 }

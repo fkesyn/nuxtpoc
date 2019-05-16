@@ -1,7 +1,7 @@
 <template>
   <v-container id="homepage">
     <no-ssr>
-      FDXX!!!!
+      no ssr index!!!!
     </no-ssr>
     <v-layout row wrap>
       <v-flex offset-lg3 lg6>
@@ -35,6 +35,7 @@ export default {
     },
     logOut() {
       this.$cookies.remove('jwt')
+      localStorage.removeItem('jwt')
       this.$store.commit('login/authToken', null)
       location.reload(true)
     }
