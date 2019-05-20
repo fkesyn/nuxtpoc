@@ -14,22 +14,12 @@ module.exports = {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: pkg.description }
     ],
-    script: [
-      {
-        src: 'http://loginwidget.fabio.mota.1.dev.hostelworld.com/js/login.js'
-      }
-    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
         href:
           'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
-      },
-      {
-        rel: 'stylesheet',
-        href:
-          'http://loginwidget.fabio.mota.1.dev.hostelworld.com/css/login.css'
       }
     ]
   },
@@ -59,6 +49,9 @@ module.exports = {
     '@ax2/dayjs-module',
     'cookie-universal-nuxt'
   ],
+  vuetify: {
+    css: true
+  },
   /*
   ** Axios module configuration
   */

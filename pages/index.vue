@@ -1,8 +1,5 @@
 <template>
   <v-container id="homepage">
-    <no-ssr>
-      no ssr index!!!!
-    </no-ssr>
     <v-layout row wrap>
       <v-flex offset-lg3 lg6>
         <img src="~/assets/images/nuxt.png">
