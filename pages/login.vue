@@ -1,14 +1,28 @@
 <template>
   <v-container v-if="isAuth" id="login">
-    <no-ssr>
-      <login-widget :id="id" @loginClick="getLoginToken" />
-    </no-ssr>
+    <login-widget :id="id" @loginClick="getLoginToken" />
   </v-container>
 </template>
 
 <script>
 export default {
   name: 'Login',
+  head() {
+    return {
+      script: [
+        {
+          src: 'http://loginwidget.fabio.mota.1.dev.hostelworld.com/js/login.js'
+        }
+      ],
+      link: [
+        {
+          rel: 'stylesheet',
+          href:
+            'http://loginwidget.fabio.mota.1.dev.hostelworld.com/css/login.css'
+        }
+      ]
+    }
+  },
   data() {
     return {
       id: 'nuxtPOC',
