@@ -21,6 +21,7 @@ export default {
     fakeLogin() {
       const token = 'someToken'
       this.$cookies.set('jwt', token)
+      localStorage.setItem('jwt', token)
       this.$router.push('/')
     },
     checkAuth() {
