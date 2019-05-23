@@ -22,9 +22,12 @@
         </v-flex>
       </v-layout>
       <room-filters />
-      <v-btn color="warning" dark large @click="searchCompetitors">
-        Search Competitors
-      </v-btn>
+      <no-ssr>
+        <v-btn color="warning" dark large @click="searchCompetitors">
+          Search Competitors
+        </v-btn>
+      </no-ssr>
+
       <div v-if="isLoadingCompetitors" class="text-xs-center">
         <v-progress-circular
 

@@ -1,5 +1,5 @@
 <template>
-  <v-container id="login">
+  <v-container v-if="isAuth" id="login">
     <v-btn @click="fakeLogin">
       Login
     </v-btn>
@@ -11,20 +11,26 @@ export default {
   data() {
     return {
       id: 'nuxtPOC',
-      show: false
+      isAuth: false
     }
   },
-  mounted() {},
+  mounted() {
+    this.checkAuth()
+  },
   methods: {
     fakeLogin() {
       const token = 'someToken'
-      this.$cookies.set('jwt', token, {
-        maxAge: 60 * 60 * 24
-      })
-      this.$store.commit('login/setAuthToken', token)
+      this.$cookies.set('jwt', token)
       this.$router.push('/')
+    },
+    checkAuth() {
+      const isAuth = localStorage.getItem('jwt')
+      if (isAuth) {
+        this.$router.push('/')
+      } else {
+        this.isAuth = true
+      }
     }
-  },
-  middleware: 'anonymous'
+  }
 }
 </script>
